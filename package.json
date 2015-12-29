@@ -4,7 +4,7 @@
   "description": "test enviroment",
   "main": "index.js",
   "scripts": {
-    "test": "npm start"
+    "write": "gulp scripts"
   },
   "author": "tomonari-takahashi",
   "license": "MIT",
