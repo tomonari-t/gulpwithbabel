@@ -1,4 +1,4 @@
-# gulp with babrl
+# gulp with babel
 
 This is the ES6 test envroment with gulp and babel
 
