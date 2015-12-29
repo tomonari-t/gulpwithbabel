@@ -13,11 +13,11 @@ const config = {
     path: __dirname + '/dist/js/',
     filename: 'main.js'
   },
-  resolve: {
+  resolve: {  //これは、ファイルの識別子の省略できるように
     extensions: ['', '.js', '.jsx']
   },
   module: {
-    loaders: [
+    loaders: [  //読み込むファイルの種類によってloaderをしてい。ただいまES6+react
       {
         test: /.jsx?$/,
         loader: 'babel-loader',
