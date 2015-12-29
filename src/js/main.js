@@ -1,4 +1,4 @@
-const a = 10;
+import members from './name.js';
 
 class Test{
   constructor ( name = 'noname'){
@@ -9,5 +9,6 @@ class Test{
   }
 }
 
-const test = new Test('tomonari');
-test.say();
+members.forEach((name) => {
+  console.log(name);
+});
