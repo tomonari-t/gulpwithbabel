@@ -1,0 +1,15 @@
+{
+  "name": "gulpwithbabel",
+  "version": "1.0.0",
+  "description": "test enviroment",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "author": "tomonari-takahashi",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-load-plugins": "^1.1.0"
+  }
+}
