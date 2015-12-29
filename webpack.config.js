@@ -14,14 +14,17 @@ const config = {
     filename: 'main.js'
   },
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js', '.jsx']
   },
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /.jsx?$/,
+        loader: 'babel-loader',
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        query: {
+          presets: ['es2015', 'react']
+        }
       }
     ]
   }

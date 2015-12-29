@@ -1,4 +1,4 @@
-import members from './name.js';
+// import members from './name.js';
 
 class Test{
   constructor ( name = 'noname'){

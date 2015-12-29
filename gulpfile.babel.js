@@ -9,10 +9,16 @@ import webpackConfig from './webpack.config.js';
 const $ = gulpLoadPlugins();
 
 gulp.task('default', () => {
-  gulp.src('./src/js/**/*.js')
-  .pipe($.webpack(webpackConfig))
-  .pipe(gulp.dest('./dist/js/'));
+  gulp.src('./src/jsx/**/*.jsx')
+    .pipe($.webpack(webpackConfig))
+    .pipe(gulp.dest('./dist/jsx/'));
 });
+
+// gulp.task('default', () => {
+//   gulp.src('./src/js/**/*.js')
+//   .pipe($.webpack(webpackConfig))
+//   .pipe(gulp.dest('./dist/js/'));
+// });
 
 // gulp.task('default', () => {
 //   gulp.src('src/js/**/*.js')
