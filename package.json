@@ -4,16 +4,21 @@
   "description": "test enviroment",
   "main": "index.js",
   "scripts": {
-    "write": "gulp scripts"
+    "test": "gulp"
   },
   "author": "tomonari-takahashi",
   "license": "MIT",
   "devDependencies": {
     "babel": "^6.3.26",
-    "babel-core": "^6.3.26",
-    "babel-preset-es2015": "^6.3.13",
+    "babel-core": "^6.0.0",
+    "babel-preset-es2015": "^6.0.14",
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
     "gulp-load-plugins": "^1.1.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   }
 }
