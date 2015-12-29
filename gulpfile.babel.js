@@ -6,3 +6,9 @@ import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins'
 
 const $ = gulpLoadPlugins();
+
+gulp.task('script', () => {
+  gulp.src('src/js/**/*.js')
+    .pipe($.babel())
+    .pipe(gulp.dest('dist/js'))
+});
