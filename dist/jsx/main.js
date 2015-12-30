@@ -45,6 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
+	__webpack_require__(160);
 	module.exports = __webpack_require__(159);
 
 
@@ -57,12 +58,16 @@
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	Object.defineProperty(exports, "__esModule", {
-	   value: true
+	  value: true
 	});
 
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _numberInput = __webpack_require__(159);
+
+	var _numberInput2 = _interopRequireDefault(_numberInput);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -72,55 +77,109 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Help = (function (_React$Component) {
-	   _inherits(Help, _React$Component);
+	var MathBox = (function (_React$Component) {
+	  _inherits(MathBox, _React$Component);
 
-	   function Help() {
-	      _classCallCheck(this, Help);
+	  function MathBox(props) {
+	    _classCallCheck(this, MathBox);
 
-	      //this を使用する前に必要ラヂイ
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(MathBox).call(this, props));
 
-	      var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Help).call(this));
+	    _this.state = {
+	      numA: 0,
+	      numB: 0,
+	      total: 0
+	    };
+	    return _this;
+	  }
 
-	      _this.state = {
-	         text: 'お前は何をしている',
-	         isDisabled: false
-	      };
-	      return _this;
-	   }
+	  _createClass(MathBox, [{
+	    key: 'sum',
+	    value: function sum() {
+	      console.log(this.state.numA, this.state.numB);
+	      var _total = this.state.numA + this.state.numB;
+	      this.setState({
+	        total: _total
+	      });
+	    }
+	  }, {
+	    key: 'onChangeA',
+	    value: function onChangeA(num) {
+	      this.setState({
+	        numA: num
+	      });
+	      this.sum();
+	    }
+	  }, {
+	    key: 'onChangeB',
+	    value: function onChangeB(num) {
+	      this.setState({
+	        numB: num
+	      });
+	      this.sum();
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_numberInput2.default, {
+	          handleChange: this.onChangeA.bind(this)
+	        }),
+	        _react2.default.createElement(_numberInput2.default, {
+	          handleChange: this.onChangeB.bind(this)
+	        }),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          '合計:',
+	          this.state.total
+	        )
+	      );
+	    }
+	  }]);
 
-	   _createClass(Help, [{
-	      key: 'handleClick',
-	      value: function handleClick() {
-	         this.setState({
-	            text: 'あぁクリックね'
-	         });
-	         this.setState({
-	            isDisabled: true
-	         });
-	      }
-	   }, {
-	      key: 'render',
-	      value: function render() {
-	         return _react2.default.createElement(
-	            'div',
-	            null,
-	            this.state.text,
-	            _react2.default.createElement(
-	               'button',
-	               { onClick: this.handleClick.bind(this),
-	                  disabled: this.state.isDisabled
-	               },
-	               '変更'
-	            )
-	         );
-	      }
-	   }]);
-
-	   return Help;
+	  return MathBox;
 	})(_react2.default.Component);
 
-	exports.default = Help;
+	// class Help extends React.Component {
+	//   constructor() {
+	//      super(); //this を使用する前に必要ラヂイ
+	//      this.state = {
+	//         text : 'お前は何をしている',
+	//         isDisabled : false
+	//      }
+	//   }
+	//
+	//   handleClick() {
+	//      this.setState({
+	//          text: 'あぁクリックね'
+	//      });
+	//      this.setState({
+	//          isDisabled: true
+	//      });
+	//   }
+	//
+	//   render() {
+	//      return (
+	//          <div>
+	//              {this.state.text}
+	//              <button onClick={
+	//                        this.handleClick.bind(this)
+	//                      }
+	//                      disabled={this.state.isDisabled}
+	//               >
+	//                変更
+	//              </button>
+	//          </div>
+	//      );
+	//   }
+	// }
+
+	// export default Help;
+
+	exports.default = MathBox;
 
 /***/ },
 /* 2 */
@@ -19706,11 +19765,84 @@
 
 	'use strict';
 
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(160);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var NumberInput = (function (_React$Component) {
+	  _inherits(NumberInput, _React$Component);
+
+	  function NumberInput(props) {
+	    _classCallCheck(this, NumberInput);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(NumberInput).call(this, props));
+
+	    _this.state = {
+	      // stateは自分の持ち物であり、mutable
+	      num: 0
+	    };
+	    return _this;
+	  }
+
+	  _createClass(NumberInput, [{
+	    key: 'handleChange',
+	    value: function handleChange(e) {
+	      e.preventDefault();
+	      var num = Number(e.target.value);
+	      if (Number.isNaN(num)) {
+	        //数字以外の時
+	        this.setState({
+	          num: 0
+	        });
+	      } else {
+	        //数字だったら
+	        //親に数字を渡してやる
+	        this.setState({
+	          num: num
+	        });
+	        this.props.handleChange(num);
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement('input', {
+	        value: this.state.num,
+	        onChange: this.handleChange.bind(this)
+	      });
+	    }
+	  }]);
+
+	  return NumberInput;
+	})(_react2.default.Component);
+
+	exports.default = NumberInput;
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(161);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -19720,9 +19852,14 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	console.log(_help2.default);
+	// import Help from './help.jsx';
 
 	_reactDom2.default.render(_react2.default.createElement(_help2.default, null), document.getElementById('example'));
+
+	// ReactDOM.render(
+	//   <Help />,
+	//   document.getElementById('example')
+	// );
 
 	// var Hello = React.createClass({
 	//   getInitialState: function () {
@@ -19739,7 +19876,7 @@
 	// module.exports = Hello;
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

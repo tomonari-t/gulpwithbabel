@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Help from './help.jsx';
-
-console.log(Help);
+import MathBox from './help.jsx'
+// import Help from './help.jsx';
 
 ReactDOM.render(
-  <Help />,
+  <MathBox />,
   document.getElementById('example')
-);
+)
+
+// ReactDOM.render(
+//   <Help />,
+//   document.getElementById('example')
+// );
 
 // var Hello = React.createClass({
 //   getInitialState: function () {
